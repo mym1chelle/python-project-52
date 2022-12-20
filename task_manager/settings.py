@@ -14,6 +14,10 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 
+
+load_dotenv()
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,6 +29,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-37$e)_s#-506(j65tm=6p7@mw6girrc_)m60)j7ttr$rb=!$d='
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
+
 DEBUG = os.getenv('DEBUG_VALUE')
 
 ALLOWED_HOSTS = [
@@ -82,7 +88,6 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 import dj_database_url
 
 
-load_dotenv()
 DATABASES = {
     'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
     }
