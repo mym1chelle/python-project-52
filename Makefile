@@ -1,5 +1,5 @@
 start:
-	poetry run gunicorn hexlet_django_project.wsgi --log-file -
+	poetry run gunicorn task_manager.wsgi --log-file -
 
 dev:
 	poetry run python manage.py runserver
