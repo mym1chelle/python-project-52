@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load bootstrap4 %}
+{% load static %}
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
 
@@ -15,27 +16,8 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
 
-    <!-- Bootstrap core CSS -->
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
     <!-- Custom styles for this template -->
-    <link href="../static/cover.css" rel="stylesheet">
+    <link type="text/css" href="{% static 'cover.css' %}" rel="stylesheet" />
   </head>
   <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
