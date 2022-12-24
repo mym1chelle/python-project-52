@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+{% block content %}
+            <form method="post">
+                {% csrf_token %}
+                    {% bootstrap_form form %}
+                {% bootstrap_button text_button button_type="submit" button_class="btn-primary" %}
+            </form>     
+{% endblock %}

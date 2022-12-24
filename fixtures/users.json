@@ -1,0 +1,56 @@
+[
+{
+    "model": "users.users",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$mHcA9wwuOhWIfsg0a46ZIZ$R0NbUPgRMw+6zCjbj1kssf59xcefknVAi2b76ofZU1M=",
+        "last_login": "2022-12-24T05:51:54.583Z",
+        "is_superuser": false,
+        "username": "beasttitan",
+        "first_name": "Zeke",
+        "last_name": "Yeager",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-12-24T05:46:25.564Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.users",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$9eFSOGN0O0sbAzxyytcsAT$jzfijKxwtrSNi0TLpCvRmQmNoL6e9XS8U8XuKnMENgA=",
+        "last_login": "2022-12-24T05:52:07.686Z",
+        "is_superuser": false,
+        "username": "attacktitan",
+        "first_name": "Eren",
+        "last_name": "Yeager",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-12-24T05:44:15.648Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.users",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$CLu4D8G2hxCUKavv9RVizX$nXg0FdvLAeX6m8MINq8HZVMV0oGtaGlpuQMJAO+LFN8=",
+        "last_login": "2022-12-24T05:51:41.837Z",
+        "is_superuser": false,
+        "username": "excollosaltitan",
+        "first_name": "Bertholdt",
+        "last_name": "Hoover",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-12-24T05:51:24.435Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

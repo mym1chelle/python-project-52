@@ -21,6 +21,7 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+FIXTURE_DIRS = (os.path.join(BASE_DIR, "fixtures"),)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -49,19 +50,23 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
-    'task_manager'
+    'task_manager',
+    'task_manager.users'
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.locale.LocaleMiddleware'
+    
 ]
 
 ROOT_URLCONF = 'task_manager.urls'
@@ -92,10 +97,10 @@ import dj_database_url
 
 
 DATABASES = {
-    'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+    'default': dj_database_url.parse(os.getenv('DATABASE_URL')),
     }
 
-
+AUTH_USER_MODEL = "users.Users"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -125,14 +130,21 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+USE_L10N = True
 
 USE_TZ = True
 
+gettext = lambda s: s
+
 LANGUAGES = (
-    ("pl", "Polish"),
-    ("en", "English"),
-    ("ru", "Russian"),
+    ('ru', gettext('Russia')),
+    ('en', gettext('English')),
+    ('pl', gettext('Polish')),
 )
+
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
+
+
 
 
 # Static files (CSS, JavaScript, Images)

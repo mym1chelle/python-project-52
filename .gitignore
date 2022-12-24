@@ -5,3 +5,5 @@
 .coverage
 coverage.xml
 .env
+.idea
+db.sqlite3
