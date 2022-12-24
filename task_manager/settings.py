@@ -38,7 +38,7 @@ CSRF_TRUSTED_ORIGINS = ['https://python-project-52-mymichelle.up.railway.app']
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'webserver',
-    'https://python-project-52-mymichelle.up.railway.app'
+    'python-project-52-mymichelle.up.railway.app'
     ]
 
 # Application definition
