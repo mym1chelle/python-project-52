@@ -10,7 +10,8 @@ DELETE_USER_TEXT_BUTTON = gettext_lazy('Yes, delete')
 # flash message
 LOGIN_SUCCESS_MESSAGE = gettext_lazy('Logged in successfully')
 LOGOUT_SUCCESS_MESSAGE = gettext_lazy('Logged out successfully')
-CHANGE_USER_ERROR_MESSAGE = gettext_lazy('You do not have a permission to change another user')
+CHANGE_USER_ERROR_MESSAGE =\
+    gettext_lazy('You do not have a permission to change another user')
 NOT_AUTH_ERROR_MESSAGE = gettext_lazy('You are not authorized. Please, log in.')
 CREATE_USER_SUCCESS_MESSAGE = gettext_lazy('User successfully created')
 CHANGE_USER_SUCCESS_MESSAGE = gettext_lazy('User successfully changed')

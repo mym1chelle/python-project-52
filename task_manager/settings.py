@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
+import dj_database_url
 import os
 
 
@@ -39,7 +40,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'webserver',
     'python-project-52-mymichelle.up.railway.app'
-    ]
+]
 
 # Application definition
 
@@ -52,9 +53,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'task_manager',
-    'task_manager.users'
+    'task_manager.users',
+    'task_manager.statuses'
 ]
-
 
 
 MIDDLEWARE = [
@@ -67,7 +68,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
 ]
 
 ROOT_URLCONF = 'task_manager.urls'
@@ -94,12 +94,10 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-import dj_database_url
-
 
 DATABASES = {
     'default': dj_database_url.parse(os.getenv('DATABASE_URL')),
-    }
+}
 
 AUTH_USER_MODEL = "users.Users"
 
@@ -135,12 +133,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-gettext = lambda s: s
-
 LANGUAGES = (
-    ('ru', gettext('Russia')),
-    ('en', gettext('English')),
-    ('pl', gettext('Polish')),
+    ('ru', 'Russia'),
+    ('en', 'English'),
+    ('pl', 'Polish'),
 )
 
 LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)

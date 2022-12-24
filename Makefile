@@ -9,3 +9,6 @@ migrate:
 
 makemigrations:
 	poetry run python manage.py makemigrations
+
+lint:
+	poetry run flake8 task_manager
