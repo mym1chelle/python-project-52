@@ -33,12 +33,12 @@ SECRET_KEY = 'django-insecure-37$e)_s#-506(j65tm=6p7@mw6girrc_)m60)j7ttr$rb=!$d=
 
 DEBUG = os.getenv('DEBUG_VALUE', True)
 
-CSRF_TRUSTED_ORIGINS = ['python-project-52-mymichelle.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://python-project-52-mymichelle.up.railway.app']
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'webserver',
-    'python-project-52-mymichelle.up.railway.app'
+    'https://python-project-52-mymichelle.up.railway.app'
     ]
 
 # Application definition
