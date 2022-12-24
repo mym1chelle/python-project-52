@@ -97,7 +97,7 @@ import dj_database_url
 
 
 DATABASES = {
-    'default': dj_database_url.parse(os.getenv('DATABASE_URL_')),
+    'default': dj_database_url.parse(os.getenv('DATABASE_URL')),
     }
 
 AUTH_USER_MODEL = "users.Users"
