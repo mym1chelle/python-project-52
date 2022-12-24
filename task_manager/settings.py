@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-37$e)_s#-506(j65tm=6p7@mw6girrc_)m60)j7ttr$rb=!$d=
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = os.getenv('DEBUG_VALUE', False)
+DEBUG = os.getenv('DEBUG_VALUE', True)
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -97,7 +97,7 @@ import dj_database_url
 
 
 DATABASES = {
-    'default': dj_database_url.parse(os.getenv('DATABASE_URL')),
+    'default': dj_database_url.parse(os.getenv('DATABASE_URL_')),
     }
 
 AUTH_USER_MODEL = "users.Users"

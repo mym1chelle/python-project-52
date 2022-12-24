@@ -1,5 +1,5 @@
 start:
-	poetry run gunicorn task_manager.wsgi --log-file -
+	poetry run gunicorn -w 5 task_manager.wsgi --log-file -
 
 dev:
 	poetry run python manage.py runserver
