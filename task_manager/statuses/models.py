@@ -12,9 +12,12 @@ class Statuses(models.Model):
         verbose_name = STATUSES_MODEL_VERBOSE_NAME
         verbose_name_plural = STATUSES_MODEL_VERBOSE_NAME_PLURAL
 
-    name = models.CharField(max_length=100, null=False, verbose_name=STATUS_VERBOSE_NAME)
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name=CREATED_AT_VERBOSE_NAME)
-    updated_at = models.DateTimeField(auto_now=True, verbose_name=UPDATED_AT_VERBOSE_NAME)
+    name = models.CharField(max_length=100,
+                            null=False, verbose_name=STATUS_VERBOSE_NAME)
+    created_at = models.DateTimeField(auto_now_add=True,
+                                      verbose_name=CREATED_AT_VERBOSE_NAME)
+    updated_at = models.DateTimeField(auto_now=True,
+                                      verbose_name=UPDATED_AT_VERBOSE_NAME)
 
     def __str__(self):
         return self.name

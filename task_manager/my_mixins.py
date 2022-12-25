@@ -1,6 +1,5 @@
 from django.contrib.auth.mixins import AccessMixin
 from django.contrib import messages
-from django.urls import reverse_lazy
 from django.db.models import ProtectedError
 from django.http import HttpResponseRedirect
 from constants.users_constants import\

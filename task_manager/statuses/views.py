@@ -9,7 +9,7 @@ from constants.statuses_constants import\
     CREATE_STATUS_BUTTON, CREATE_STATUS_SUCCESS_MESSAGE,\
     CHANGE_STATUS_BUTTON, CHANGE_STATUS_SUCCESS_MESSAGE,\
     CHANGE_STATUS_TITLE, DELETE_STATUS_BUTTON,\
-    DELETE_STATUS_SUCCESS_MESSAGE, DELETE_STATUS_TITLE
+    DELETE_STATUS_TITLE
 from task_manager.statuses.forms import CreateStatusForm
 from task_manager.my_mixins import CheckConnectMixin
 
@@ -69,5 +69,3 @@ class DeleteStatusView(LoginRequiredMixin,
         context['title'] = DELETE_STATUS_TITLE
         context['text_button'] = DELETE_STATUS_BUTTON
         return context
-
-
