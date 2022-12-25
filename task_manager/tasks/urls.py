@@ -3,4 +3,6 @@ from task_manager.tasks import views
 
 
 app_name = 'tasks'
-urlpatterns = []
+urlpatterns = [
+    path('', views.AllTasksView.as_view(), name='tasks'),
+]

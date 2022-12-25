@@ -11,23 +11,25 @@
             <th>{% translate "Name" %}</th>
             <th>{% translate "Status" %}</th>
             <th>{% translate "Created by" %}</th>
-            <th>{% translate "Executive" %}</th>
+            <th>{% translate "Executor" %}</th>
             <th>{% translate "Created at" %}</th>
             <th></th>
         </tr>
       </thead>
       <tbody>
-        {% for user in users %}
+        {% for task in tasks %}
           <tr>
-            <td>{{ user.id }}</td>
-            <td>{{ user.username }}</td>
-            <td>{{ user.get_full_name }}</td>
-            <td>{{ user.date_joined }}</td>
+              <td>{{ task.id }}</td>
+              <td>{{ task.name }}</td>
+              <td>{{ task.task_status.name }}</td>
+              <td>{{ task.task_created_by.get_full_name }}</td>
+              <td>{{ task.task_executor.get_full_name }}</td>
+              <td>{{ task.created_at }}</td>
 
             <td>
-              <a href="{% url 'change' pk=user.id %}">{% translate "Change" %}</a>
+              <a href=#>{% translate "Change" %}</a>
               <br>
-              <a href="{% url 'delete' pk=user.id %}">{% translate "Delete" %}</a>
+              <a href=#>{% translate "Delete" %}</a>
             </td>
           </tr>
           {% endfor %}
