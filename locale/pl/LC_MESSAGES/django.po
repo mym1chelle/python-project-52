@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 12:56+0400\n"
+"POT-Creation-Date: 2022-12-25 10:39+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,121 +16,187 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
-"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
-"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
-#: task_manager/constants.py:5
-msgid "Login"
-msgstr ""
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
+"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
+"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: task_manager/constants.py:6
-msgid "Register"
-msgstr "Zarejestruj się"
+#: constants/statuses_constants.py:5
+msgid "Status"
+msgstr "Status"
 
-#: task_manager/constants.py:7 task_manager/templates/users.html:26
+#: constants/statuses_constants.py:6 constants/statuses_constants.py:12
+#: task_manager/templates/base.html:27
+msgid "Statuses"
+msgstr "Statusy"
+
+#: constants/statuses_constants.py:7
+#: task_manager/templates/statuses/statuses.html:12
+msgid "Name"
+msgstr "Imię"
+
+#: constants/statuses_constants.py:8
+#: task_manager/templates/statuses/statuses.html:13
+#: task_manager/templates/users/users.html:13
+msgid "Created at"
+msgstr "Utworzono"
+
+#: constants/statuses_constants.py:9
+msgid "Updated at"
+msgstr "Zaktualizowano"
+
+#: constants/statuses_constants.py:13
+#: task_manager/templates/statuses/statuses.html:7
+msgid "Create a status"
+msgstr "Utwórz status"
+
+#: constants/statuses_constants.py:14
+msgid "Change a status"
+msgstr "Zmień status"
+
+#: constants/statuses_constants.py:15
+msgid "Delete a status"
+msgstr "Usuń status"
+
+#: constants/statuses_constants.py:18
+#, fuzzy
+#| msgid "Created at"
+msgid "Create"
+msgstr "Utworzono"
+
+#: constants/statuses_constants.py:19 constants/users_constants.py:7
+#: task_manager/templates/statuses/statuses.html:25
+#: task_manager/templates/users/users.html:26
 msgid "Change"
 msgstr "Zmienić"
 
-#: task_manager/constants.py:8
+#: constants/statuses_constants.py:20 constants/users_constants.py:8
 msgid "Yes, delete"
 msgstr "Tak, usuń"
 
-#: task_manager/constants.py:11
+#: constants/statuses_constants.py:23
+msgid "Status successfully created"
+msgstr "Status został pomyślnie utworzony"
+
+#: constants/statuses_constants.py:24
+msgid "Status successfully changed"
+msgstr "Status został pomyślnie zmieniony"
+
+#: constants/statuses_constants.py:25
+msgid "Status successfully deleted"
+msgstr "Status został pomyślnie usunięty"
+
+#: constants/statuses_constants.py:26
+msgid "Cannot delete a status in use"
+msgstr "Nie można usunąć statusu w użyciu"
+
+#: constants/users_constants.py:5
+msgid "Login"
+msgstr "Zaloguj się"
+
+#: constants/users_constants.py:6
+msgid "Register"
+msgstr "Zarejestruj się"
+
+#: constants/users_constants.py:11
 msgid "Logged in successfully"
 msgstr "Zalogowano pomyślnie"
 
-#: task_manager/constants.py:12
+#: constants/users_constants.py:12
 msgid "Logged out successfully"
 msgstr "Wylogowano pomyślnie"
 
-#: task_manager/constants.py:13
+#: constants/users_constants.py:14
 msgid "You do not have a permission to change another user"
 msgstr "Nie masz uprawnień do zmiany innego użytkownika"
 
-#: task_manager/constants.py:14
+#: constants/users_constants.py:15
 msgid "You are not authorized. Please, log in."
 msgstr "Nie jesteś zalogowany. Proszę się zalogować."
 
-#: task_manager/constants.py:15
+#: constants/users_constants.py:16
 msgid "User successfully created"
-msgstr ""
+msgstr "Użytkownik został pomyślnie utworzony"
 
-#: task_manager/constants.py:16
+#: constants/users_constants.py:17
 msgid "User successfully changed"
-msgstr "Pomyślnie utworzono użytkownika"
+msgstr "Użytkownik został pomyślnie zmieniony"
 
-#: task_manager/constants.py:17
-msgid "User was successfuly delete"
+#: constants/users_constants.py:18
+#, fuzzy
+#| msgid "User was successfuly delete"
+msgid "User was successfully delete"
 msgstr "Użytkownik został pomyślnie usunięty"
 
-#: task_manager/constants.py:20
+#: constants/users_constants.py:19
+msgid "Cannot delete a user in use"
+msgstr "Nie można usunąć użytkownika w użyciu"
+
+#: constants/users_constants.py:22
 msgid "Create a user"
 msgstr "Utwórz użytkownika"
 
-#: task_manager/constants.py:21
+#: constants/users_constants.py:23
 msgid "Login in"
 msgstr "Zaloguj się"
 
-#: task_manager/constants.py:22
+#: constants/users_constants.py:24
 msgid "Change a user"
 msgstr "Zmień użytkownika"
 
-#: task_manager/constants.py:23
+#: constants/users_constants.py:25
 msgid "Delete a user"
 msgstr "Usuń użytkownika"
 
-#: task_manager/constants.py:24 task_manager/templates/base.html:23
+#: constants/users_constants.py:26 task_manager/templates/base.html:23
 msgid "Users"
 msgstr "Użytkownicy"
 
-#: task_manager/templates/base.html:12
-msgid "Task manager "
-msgstr "Menadżer zadań"
+#: constants/users_constants.py:29 constants/users_constants.py:30
+msgid "User"
+msgstr "Użytkownik"
 
+#: task_manager/templates/base.html:12
 #: task_manager/templates/base.html:16
 msgid "Task manager"
 msgstr "Menadżer zadań"
 
-#: task_manager/templates/base.html:29
+#: task_manager/templates/base.html:34
 msgid "Log out"
 msgstr "Wyloguj"
 
-#: task_manager/templates/base.html:33
+#: task_manager/templates/base.html:38
 msgid "Log in"
 msgstr "Zaloguj się"
 
-#: task_manager/templates/base.html:36
+#: task_manager/templates/base.html:41
 msgid "Sign up"
 msgstr "Zapisz się"
 
-#: task_manager/templates/delete.html:13
+#: task_manager/templates/delete.html:11
 msgid "Are you sure you want to delete"
 msgstr "Czy jesteś pewien, że chcesz usunąć"
 
-#: task_manager/templates/startpage.html:30
-msgid "Hello from Hexlet!!"
-msgstr "Pozdrowienia z Hexlet!!"
+#: task_manager/templates/startpage.html:24
+msgid "Hello from Hexlet!"
+msgstr "Pozdrowienia z Hexlet!"
 
-#: task_manager/templates/startpage.html:31
+#: task_manager/templates/startpage.html:25
 msgid "Practical programming courses"
 msgstr "Praktyczne kursy programowania"
 
-#: task_manager/templates/startpage.html:33
+#: task_manager/templates/startpage.html:27
 msgid "Learn more"
 msgstr "Dowiedzieć się więcej"
 
-#: task_manager/templates/users.html:11
+#: task_manager/templates/statuses/statuses.html:27
+#: task_manager/templates/users/users.html:28
+msgid "Delete"
+msgstr "Usunąć"
+
+#: task_manager/templates/users/users.html:11
 msgid "User name"
 msgstr "Nazwa użytkownika"
 
-#: task_manager/templates/users.html:12
+#: task_manager/templates/users/users.html:12
 msgid "Full name"
 msgstr "Imię i nazwisko"
-
-#: task_manager/templates/users.html:13
-msgid "Created at"
-msgstr "Utworzono"
-
-#: task_manager/templates/users.html:28
-msgid "Delete"
-msgstr "Usunąć"
