@@ -24,7 +24,7 @@ DELETE_TASK_TITLE = gettext_lazy('Change a task')
 # button
 CREATE_TASK_BUTTON = gettext_lazy('Create')
 CHANGE_TASK_BUTTON = gettext_lazy('Change')
-DELETE_TAKS_BUTTON = gettext_lazy('Yes, delete')
+DELETE_TASK_BUTTON = gettext_lazy('Yes, delete')
 SHOW_TASK_BUTTON = gettext_lazy('Show')
 
 # flash-message

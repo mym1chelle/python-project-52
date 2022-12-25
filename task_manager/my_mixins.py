@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import AccessMixin
 from django.contrib import messages
 from django.db.models import ProtectedError
-from django.http import HttpResponseRedirect
+from django.shortcuts import redirect
 from constants.users_constants import\
     DELETE_USER_SUCCESS_MESSAGE, DELETE_USER_ERROR_MESSAGE
 from constants.statuses_constants import\
@@ -28,4 +28,4 @@ class CheckConnectMixin(AccessMixin):
             messages.error(self.request, ERROR_MESSAGES[model_name])
         else:
             messages.success(self.request, SUCCESS_MESSAGES[model_name])
-        return HttpResponseRedirect(self.get_success_url())
+        return redirect(self.get_success_url())
