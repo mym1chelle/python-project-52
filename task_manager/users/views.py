@@ -8,6 +8,7 @@ from django.contrib import messages
 from django.shortcuts import redirect
 
 from task_manager.users.models import Users
+from task_manager.my_mixins import CheckConnectMixin
 from constants.users_constants import CHANGE_USER_ERROR_MESSAGE,\
     NOT_AUTH_ERROR_MESSAGE, USERS_LIST_TITLE,\
     CREATE_USER_SUCCESS_MESSAGE, REGISTRETION_USER_TEXT_BUTTON,\
@@ -79,13 +80,12 @@ class UserUpdateView(SuccessMessageMixin,
         return context
 
 
-class UserDeleteView(SuccessMessageMixin,
-                     CheckAuthenticatedMixin,
+class UserDeleteView(CheckAuthenticatedMixin,
                      ChangeUserInfoMixin,
+                     CheckConnectMixin,
                      DeleteView):
     model = Users
-    template_name = 'users/delete.html'
-    success_message = DELETE_USER_SUCCESS_MESSAGE
+    template_name = 'delete.html'
     success_url = reverse_lazy('users')
 
     def get_context_data(self, **kwargs):

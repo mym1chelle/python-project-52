@@ -6,19 +6,15 @@
     {{ title }}
 {% endblock %}
 {% block content %}
-    <div class="card">
-        <div class="card-body p-5 bg-light mt-5 pt-4 pb-16">
             <form method="post">
                 {% csrf_token %}
                 <p>{% translate "Are you sure you want to delete" %}
                     {% if object.first_name %}
                         {{ object.first_name }} {{ object.last_name }}?
                     {% else %}
-                        {{ object.username }}?
+                        {{ object.name }}?
                     {% endif %}
                 </p>
                 {% bootstrap_button text_button button_type="submit" button_class="btn-danger" %}
             </form>
-        </div>
-    </div>
 {% endblock %}

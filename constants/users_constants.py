@@ -15,7 +15,8 @@ CHANGE_USER_ERROR_MESSAGE =\
 NOT_AUTH_ERROR_MESSAGE = gettext_lazy('You are not authorized. Please, log in.')
 CREATE_USER_SUCCESS_MESSAGE = gettext_lazy('User successfully created')
 CHANGE_USER_SUCCESS_MESSAGE = gettext_lazy('User successfully changed')
-DELETE_USER_SUCCESS_MESSAGE = gettext_lazy('User was successfuly delete')
+DELETE_USER_SUCCESS_MESSAGE = gettext_lazy('User was successfully delete')
+DELETE_USER_ERROR_MESSAGE = gettext_lazy('Cannot delete a user in use')
 
 # title
 CREATE_USER_TITLE = gettext_lazy('Create a user')

@@ -8,8 +8,10 @@ from constants.statuses_constants import\
     STATUSES_LIST_TITLE, CREATE_STATUS_TITLE,\
     CREATE_STATUS_BUTTON, CREATE_STATUS_SUCCESS_MESSAGE,\
     CHANGE_STATUS_BUTTON, CHANGE_STATUS_SUCCESS_MESSAGE,\
-    CHANGE_STATUS_TITLE
+    CHANGE_STATUS_TITLE, DELETE_STATUS_BUTTON,\
+    DELETE_STATUS_SUCCESS_MESSAGE, DELETE_STATUS_TITLE
 from task_manager.statuses.forms import CreateStatusForm
+from task_manager.my_mixins import CheckConnectMixin
 
 
 class AllStatusesView(LoginRequiredMixin, ListView):
@@ -45,13 +47,27 @@ class UpdateStatusView(LoginRequiredMixin,
     model = Statuses
     template_name = 'create_edit_forms.html'
     success_url = reverse_lazy('statuses:statuses')
-    form_class =  CreateStatusForm
+    form_class = CreateStatusForm
     success_message = CHANGE_STATUS_SUCCESS_MESSAGE
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
         context['title'] = CHANGE_STATUS_TITLE
         context['text_button'] = CHANGE_STATUS_BUTTON
+        return context
+
+
+class DeleteStatusView(LoginRequiredMixin,
+                       CheckConnectMixin,
+                       DeleteView):
+    model = Statuses
+    template_name = 'delete.html'
+    success_url = reverse_lazy('statuses:statuses')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        context['title'] = DELETE_STATUS_TITLE
+        context['text_button'] = DELETE_STATUS_BUTTON
         return context
 
 
