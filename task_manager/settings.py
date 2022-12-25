@@ -14,6 +14,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url
 import os
+import ast
 
 
 load_dotenv()
@@ -28,11 +29,11 @@ FIXTURE_DIRS = (os.path.join(BASE_DIR, "fixtures"),)
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-37$e)_s#-506(j65tm=6p7@mw6girrc_)m60)j7ttr$rb=!$d='
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = os.getenv('DEBUG_VALUE', True)
+DEBUG = ast.literal_eval(os.getenv('DEBUG_VALUE'))
 
 CSRF_TRUSTED_ORIGINS = ['https://python-project-52-mymichelle.up.railway.app']
 
