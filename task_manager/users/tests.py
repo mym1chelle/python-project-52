@@ -2,7 +2,8 @@ from django.test import TestCase
 from django.urls import reverse
 
 from task_manager.users.models import Users
-from task_manager.constants import *
+from constants.users_constants import CREATE_USER_SUCCESS_MESSAGE,\
+    CHANGE_USER_SUCCESS_MESSAGE, CHANGE_USER_ERROR_MESSAGE
 
 
 class UserTestCase(TestCase):
@@ -18,7 +19,7 @@ class UserTestCase(TestCase):
         response = self.client.get(reverse('users'))
         self.assertTemplateUsed(
             response,
-            template_name='users.html',
+            template_name='users/users.html',
         )
         users_list = list(response.context['users'])
         user1, user2, user3 = users_list
@@ -65,7 +66,11 @@ class UserTestCase(TestCase):
         new_user = Users.objects.get(username=new_user['username'])
         self.assertEqual('Reiner', new_user.first_name)
         self.assertEqual('Braun', new_user.last_name)
-        self.assertTrue(new_user.check_password('qwertyklaskdlkasldkalkdlaksldkaslkdajdlsajdas12312'))
+        self.assertTrue(
+            new_user.check_password(
+                'qwertyklaskdlkasldkalkdlaksldkaslkdajdlsajdas12312'
+            )
+        )
 
     def test_change_user(self):
         """Test change user"""
@@ -99,14 +104,19 @@ class UserTestCase(TestCase):
         new_user = Users.objects.get(username=changed_user['username'])
         self.assertEqual('Armin', new_user.first_name)
         self.assertEqual('Arlert', new_user.last_name)
-        self.assertTrue(new_user.check_password('q1w2e3r4aldklasdklakdlakdlaksldkallawja'))
+        self.assertTrue(
+            new_user.check_password('q1w2e3r4aldklasdklakdlakdlaksldkallawja')
+        )
 
     def test_change_by_another_user(self):
         """Test user change by another user"""
         user1 = self.user1
         user2 = self.user2
         self.client.force_login(Users.objects.get(pk=user1.id))
-        response = self.client.get(reverse('change', args=(user2.id,)), follow=True)
+        response = self.client.get(
+            reverse('change', args=(user2.id,)),
+            follow=True
+        )
         self.assertRedirects(response, '/ru/users/', status_code=302)
         self.assertContains(
             response,
@@ -118,7 +128,10 @@ class UserTestCase(TestCase):
         user1 = self.user1
         user2 = self.user2
         self.client.force_login(Users.objects.get(pk=user1.id))
-        response = self.client.get(reverse('delete', args=(user2.id,)), follow=True)
+        response = self.client.get(
+            reverse('delete', args=(user2.id,)),
+            follow=True
+        )
         self.assertRedirects(response, '/ru/users/', status_code=302)
         self.assertContains(
             response,

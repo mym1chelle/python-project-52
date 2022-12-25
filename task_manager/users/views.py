@@ -8,12 +8,18 @@ from django.contrib import messages
 from django.shortcuts import redirect
 
 from task_manager.users.models import Users
-from task_manager.constants import *
+from constants.users_constants import CHANGE_USER_ERROR_MESSAGE,\
+    NOT_AUTH_ERROR_MESSAGE, USERS_LIST_TITLE,\
+    CREATE_USER_SUCCESS_MESSAGE, REGISTRETION_USER_TEXT_BUTTON,\
+    CREATE_USER_TITLE, CHANGE_USER_SUCCESS_MESSAGE,\
+    CHANGE_USER_TEXT_BUTTON, CHANGE_USER_TITLE,\
+    DELETE_USER_SUCCESS_MESSAGE, DELETE_USER_TITLE,\
+    DELETE_USER_TEXT_BUTTON
 
 
 class ChangeUserInfoMixin(AccessMixin):
     success_url = ''
-    
+
     def dispatch(self, request, *args, **kwargs):
         if kwargs.get('pk') != self.request.user.id:
             messages.error(self.request, CHANGE_USER_ERROR_MESSAGE)
@@ -32,8 +38,8 @@ class CheckAuthenticatedMixin(AccessMixin):
 
 
 class AllUsersView(ListView):
-    model=Users
-    template_name = 'users.html'
+    model = Users
+    template_name = 'users/users.html'
     context_object_name = 'users'
 
     def get_context_data(self, **kwargs):
@@ -42,16 +48,14 @@ class AllUsersView(ListView):
         return data
 
 
-class CreateUser(SuccessMessageMixin, CreateView):
-    "Create a user."
+class CreateUserView(SuccessMessageMixin, CreateView):
     model = Users
     template_name = 'create_edit_forms.html'
     form_class = CreateUserForm
     success_url = reverse_lazy('login')
     success_message = CREATE_USER_SUCCESS_MESSAGE
-    
+
     def get_context_data(self, **kwargs):
-        "Set up the title and the button."
         context = super().get_context_data(**kwargs)
         context['text_button'] = REGISTRETION_USER_TEXT_BUTTON
         context['title'] = CREATE_USER_TITLE
@@ -80,7 +84,7 @@ class UserDeleteView(SuccessMessageMixin,
                      ChangeUserInfoMixin,
                      DeleteView):
     model = Users
-    template_name = 'delete.html'
+    template_name = 'users/delete.html'
     success_message = DELETE_USER_SUCCESS_MESSAGE
     success_url = reverse_lazy('users')
 

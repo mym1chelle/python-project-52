@@ -23,3 +23,7 @@ LOGIN_TITLE = gettext_lazy('Login in')
 CHANGE_USER_TITLE = gettext_lazy('Change a user')
 DELETE_USER_TITLE = gettext_lazy('Delete a user')
 USERS_LIST_TITLE = gettext_lazy('Users')
+
+# model
+USERS_MODEL_VERBOSE_NAME = gettext_lazy('User')
+USERS_MODEL_VERBOSE_NAME_PLURAL = gettext_lazy('User')

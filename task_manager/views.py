@@ -3,7 +3,8 @@ from django.contrib import messages
 from django.shortcuts import render
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.messages.views import SuccessMessageMixin
-from task_manager.constants import *
+from constants.users_constants import LOGOUT_SUCCESS_MESSAGE,\
+    LOGIN_TEXT_BUTTON, LOGIN_TITLE, LOGIN_SUCCESS_MESSAGE
 
 
 class StartPageView(View):
