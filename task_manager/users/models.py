@@ -8,6 +8,7 @@ class Users(AbstractUser):
     class Meta:
         verbose_name = USERS_MODEL_VERBOSE_NAME
         verbose_name_plural = USERS_MODEL_VERBOSE_NAME_PLURAL
+        ordering = ['id']
 
     def __str__(self):
         return self.get_full_name

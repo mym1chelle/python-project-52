@@ -11,6 +11,7 @@ class Statuses(models.Model):
     class Meta:
         verbose_name = STATUSES_MODEL_VERBOSE_NAME
         verbose_name_plural = STATUSES_MODEL_VERBOSE_NAME_PLURAL
+        ordering = ['id']
 
     name = models.CharField(max_length=100,
                             null=False, verbose_name=STATUS_VERBOSE_NAME)
