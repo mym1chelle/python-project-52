@@ -19,7 +19,7 @@ TASKS_LIST_TITLE = gettext_lazy('Tasks')
 TASK_VIEW_TITLE = gettext_lazy('Task view')
 CREATE_TASK_TITLE = gettext_lazy('Create a task')
 CHANGE_TASK_TITLE = gettext_lazy('Change a task')
-DELETE_TASK_TITLE = gettext_lazy('Change a task')
+DELETE_TASK_TITLE = gettext_lazy('Delete a task')
 
 # button
 CREATE_TASK_BUTTON = gettext_lazy('Create')

@@ -1,12 +1,13 @@
 from django.db import models
 from task_manager.users.models import Users
 from task_manager.statuses.models import Statuses
+from task_manager.labels.models import Labels
 from constants.tasks_constants import\
     TASK_NAME_VN, TASK_DESCRIPTION_VN,\
     TASK_STATUS_VN, TASK_CREATED_BY_VN,\
     TASK_EXECUTOR_VN, TASK_CREATED_AT_VN,\
     TASK_UPDATED_AT_VN, TASKS_MODEL_VERBOSE_NAME,\
-    TASKS_MODEL_VERBOSE_NAME_PLURAL
+    TASKS_MODEL_VERBOSE_NAME_PLURAL, TASK_LABEL_VN
 
 
 class Tasks(models.Model):
@@ -46,6 +47,14 @@ class Tasks(models.Model):
         verbose_name=TASK_EXECUTOR_VN,
         related_name='task_executor',
     )
+    labels = models.ManyToManyField(
+        Labels,
+        verbose_name=TASK_LABEL_VN,
+        related_name='task_label',
+        blank=True,
+        through='TaskLabelRelation',
+        through_fields=('task', 'label'),
+    )
     created_at = models.DateTimeField(
         auto_now_add=True,
         verbose_name=TASK_CREATED_AT_VN
@@ -57,3 +66,14 @@ class Tasks(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class TaskLabelRelation(models.Model):
+    task = models.ForeignKey(
+        Tasks,
+        on_delete=models.CASCADE,
+    )
+    label = models.ForeignKey(
+        Labels,
+        on_delete=models.PROTECT,
+    )

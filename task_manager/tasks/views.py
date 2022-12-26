@@ -36,6 +36,7 @@ class DetailTaskView(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
         context['title'] = TASK_VIEW_TITLE
+        context['labels'] = self.object.labels.all()
         return context
 
 
