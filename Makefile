@@ -1,3 +1,6 @@
+install:
+	poetry install
+
 start:
 	poetry run gunicorn -w 5 task_manager.wsgi --log-file -
 
