@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-26 16:54+0400\n"
+"POT-Creation-Date: 2022-12-26 19:46+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: constants/labels_constants.py:5
+#: constants/labels_constants.py:5 constants/labels_constants.py:31
 msgid "Label"
 msgstr "Метка"
 
@@ -33,7 +33,7 @@ msgstr "Метки"
 #: constants/labels_constants.py:7 constants/statuses_constants.py:7
 #: constants/tasks_constants.py:7 task_manager/templates/labels/labels.html:12
 #: task_manager/templates/statuses/statuses.html:12
-#: task_manager/templates/tasks/tasks.html:12
+#: task_manager/templates/tasks/tasks.html:22
 msgid "Name"
 msgstr "Имя"
 
@@ -41,7 +41,7 @@ msgstr "Имя"
 #: constants/tasks_constants.py:13 task_manager/templates/labels/labels.html:13
 #: task_manager/templates/statuses/statuses.html:13
 #: task_manager/templates/tasks/show_task.html:28
-#: task_manager/templates/tasks/tasks.html:16
+#: task_manager/templates/tasks/tasks.html:26
 #: task_manager/templates/users/users.html:13
 msgid "Created at"
 msgstr "Дата создания"
@@ -73,7 +73,7 @@ msgstr "Создать"
 #: task_manager/templates/labels/labels.html:25
 #: task_manager/templates/statuses/statuses.html:25
 #: task_manager/templates/tasks/show_task.html:43
-#: task_manager/templates/tasks/tasks.html:33
+#: task_manager/templates/tasks/tasks.html:43
 #: task_manager/templates/users/users.html:26
 msgid "Change"
 msgstr "Изменить"
@@ -99,9 +99,20 @@ msgstr "Метка успешно удалена"
 msgid "Cannot delete a label in use"
 msgstr "Невозможно удалить метку, потому что она используется"
 
-#: constants/statuses_constants.py:5 constants/tasks_constants.py:9
+#: constants/labels_constants.py:30
+#: task_manager/templates/tasks/show_task.html:20
+#: task_manager/templates/tasks/tasks.html:25
+msgid "Executor"
+msgstr "Исполнитель"
+
+#: constants/labels_constants.py:32
+msgid "My tasks only"
+msgstr "Только свои задачи"
+
+#: constants/labels_constants.py:33 constants/statuses_constants.py:5
+#: constants/tasks_constants.py:9
 #: task_manager/templates/tasks/show_task.html:24
-#: task_manager/templates/tasks/tasks.html:13
+#: task_manager/templates/tasks/tasks.html:23
 msgid "Status"
 msgstr "Статус"
 
@@ -158,7 +169,7 @@ msgstr "Исполнитель"
 
 #: constants/tasks_constants.py:12
 #: task_manager/templates/tasks/show_task.html:16
-#: task_manager/templates/tasks/tasks.html:14
+#: task_manager/templates/tasks/tasks.html:24
 msgid "Created by"
 msgstr "Автор"
 
@@ -166,7 +177,7 @@ msgstr "Автор"
 msgid "Task view"
 msgstr "Просмотр задачи"
 
-#: constants/tasks_constants.py:20 task_manager/templates/tasks/tasks.html:7
+#: constants/tasks_constants.py:20 task_manager/templates/tasks/tasks.html:8
 msgid "Create a task"
 msgstr "Создать задачу"
 
@@ -285,7 +296,7 @@ msgstr "Вы уверены, что хотите удалить"
 #: task_manager/templates/labels/labels.html:27
 #: task_manager/templates/statuses/statuses.html:27
 #: task_manager/templates/tasks/show_task.html:45
-#: task_manager/templates/tasks/tasks.html:35
+#: task_manager/templates/tasks/tasks.html:45
 #: task_manager/templates/users/users.html:28
 msgid "Delete"
 msgstr "Удалить"
@@ -301,11 +312,6 @@ msgstr "Практические курсы по программировани�
 #: task_manager/templates/startpage.html:27
 msgid "Learn more"
 msgstr "Узнать больше"
-
-#: task_manager/templates/tasks/show_task.html:20
-#: task_manager/templates/tasks/tasks.html:15
-msgid "Executor"
-msgstr "Исполнитель"
 
 #: task_manager/templates/users/users.html:11
 msgid "User name"
