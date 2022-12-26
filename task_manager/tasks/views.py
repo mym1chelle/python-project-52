@@ -14,7 +14,7 @@ from constants.tasks_constants import\
     TASK_VIEW_TITLE, CHANGE_TASK_TITLE,\
     CHANGE_TASK_BUTTON, CHANGE_TASK_SUCCESS_MESSAGE,\
     DELETE_TASK_TITLE, DELETE_TASK_BUTTON,\
-    DELETE_TASK_ERROR_MESSAGE
+    DELETE_TASK_ERROR_MESSAGE, DELETE_TASK_SUCCESS_MESSAGE
 
 
 class AllTasksView(LoginRequiredMixin, ListView):
@@ -81,6 +81,7 @@ class DeleteTaskView(LoginRequiredMixin,
     model = Tasks
     success_url = reverse_lazy('tasks:tasks')
     template_name = 'delete.html'
+    success_message = DELETE_TASK_SUCCESS_MESSAGE
 
     def form_valid(self, form):
         if self.object.created_by != self.request.user:
@@ -88,7 +89,6 @@ class DeleteTaskView(LoginRequiredMixin,
         else:
             super().form_valid(form)
         return redirect(self.success_url)
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()

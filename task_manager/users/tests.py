@@ -2,17 +2,20 @@ from django.test import TestCase
 from django.urls import reverse
 
 from task_manager.users.models import Users
+from task_manager.tasks.models import Tasks
 from constants.users_constants import CREATE_USER_SUCCESS_MESSAGE,\
-    CHANGE_USER_SUCCESS_MESSAGE, CHANGE_USER_ERROR_MESSAGE
+    CHANGE_USER_SUCCESS_MESSAGE, CHANGE_USER_ERROR_MESSAGE,\
+    DELETE_USER_ERROR_MESSAGE, DELETE_USER_SUCCESS_MESSAGE
 
 
 class UserTestCase(TestCase):
-    fixtures = ['users.json', ]
+    fixtures = ['users.json', 'tasks.json', 'statuses.json']
 
     def setUp(self):
         self.user1 = Users.objects.get(pk=1)
         self.user2 = Users.objects.get(pk=2)
         self.user3 = Users.objects.get(pk=3)
+        self.task1 = Tasks.objects.get(pk=2)
 
     def test_users_list(self):
         """Test users list"""
@@ -136,4 +139,48 @@ class UserTestCase(TestCase):
         self.assertContains(
             response,
             CHANGE_USER_ERROR_MESSAGE,
+        )
+
+    def test_delete_user_with_a_task(self):
+        """Test user delete with a task"""
+        user = self.user1
+        self.client.force_login(Users.objects.get(pk=user.id))
+        response = self.client.get(
+            reverse('delete', args=(user.id,))
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response,
+            template_name='delete.html',
+        )
+        response = self.client.post(reverse(
+            'delete', args=(user.id,)),
+            follow=True
+        )
+        self.assertRedirects(response, '/ru/users/', status_code=302)
+        self.assertContains(
+            response,
+            DELETE_USER_ERROR_MESSAGE,
+        )
+
+    def test_delete_user(self):
+        """Test user delete"""
+        user = self.user3
+        self.client.force_login(Users.objects.get(pk=user.id))
+        response = self.client.get(
+            reverse('delete', args=(user.id,))
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response,
+            template_name='delete.html',
+        )
+        response = self.client.post(reverse(
+            'delete', args=(user.id,)),
+            follow=True
+        )
+        self.assertRedirects(response, '/ru/users/', status_code=302)
+        self.assertContains(
+            response,
+            DELETE_USER_SUCCESS_MESSAGE,
         )

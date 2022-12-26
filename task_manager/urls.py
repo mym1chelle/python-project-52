@@ -24,6 +24,7 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
 ]
 
+
 urlpatterns += i18n_patterns(
     path('', views.StartPageView.as_view(), name='home'),
 

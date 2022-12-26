@@ -2,8 +2,8 @@ from django.utils.translation import gettext_lazy
 
 
 # model
-TASKS_MODEL_VERBOSE_NAME = gettext_lazy('Status')
-TASKS_MODEL_VERBOSE_NAME_PLURAL = gettext_lazy('Statuses')
+TASKS_MODEL_VERBOSE_NAME = gettext_lazy('Task')
+TASKS_MODEL_VERBOSE_NAME_PLURAL = gettext_lazy('Tasks')
 TASK_NAME_VN = gettext_lazy('Name')
 TASK_DESCRIPTION_VN = gettext_lazy('Description')
 TASK_STATUS_VN = gettext_lazy('Status')

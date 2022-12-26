@@ -4,11 +4,13 @@ from task_manager.statuses.models import Statuses
 from task_manager.users.models import Users
 from constants.statuses_constants import\
     CREATE_STATUS_SUCCESS_MESSAGE,\
-    CHANGE_STATUS_SUCCESS_MESSAGE
+    CHANGE_STATUS_SUCCESS_MESSAGE,\
+    DELETE_STATUS_ERROR_MESSAGE,\
+    DELETE_STATUS_SUCCESS_MESSAGE
 
 
 class StatusesTestCase(TestCase):
-    fixtures = ['statuses.json', 'users.json']
+    fixtures = ['statuses.json', 'users.json', 'tasks.json']
 
     def setUp(self):
         self.user = Users.objects.get(pk=1)
@@ -83,3 +85,60 @@ class StatusesTestCase(TestCase):
         )
         new_status = Statuses.objects.get(id=status.id)
         self.assertEqual('Done', new_status.name)
+
+
+    def test_delete_status(self):
+        """Test delete status"""
+        status = self.status2
+        self.client.force_login(self.user)
+        response = self.client.get(reverse(
+            'statuses:delete',
+            args=(status.id,)))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response,
+            template_name='delete.html'
+        )
+
+        response = self.client.post(
+            reverse(
+                'statuses:delete',
+                args=(status.id,)
+            ),
+            follow=True
+        )
+        with self.assertRaises(Statuses.DoesNotExist):
+            Statuses.objects.get(pk=status.id)
+        self.assertRedirects(response, '/ru/statuses/', status_code=302)
+        self.assertContains(
+            response,
+            DELETE_STATUS_SUCCESS_MESSAGE
+        )
+
+
+    def test_delete_use_status(self):
+        """Test delete use status"""
+        status = self.status1
+        self.client.force_login(self.user)
+        response = self.client.get(reverse(
+            'statuses:delete',
+            args=(status.id,)))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response,
+            template_name='delete.html'
+        )
+
+        response = self.client.post(
+            reverse(
+                'statuses:delete',
+                args=(status.id,)
+            ),
+            follow=True
+        )
+        self.assertTrue(Statuses.objects.get(pk=status.id))
+        self.assertRedirects(response, '/ru/statuses/', status_code=302)
+        self.assertContains(
+            response,
+            DELETE_STATUS_ERROR_MESSAGE
+        )
