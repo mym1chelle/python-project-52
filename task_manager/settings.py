@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_filters',
     'bootstrap4',
     'task_manager',
     'task_manager.users',
@@ -92,7 +93,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'task_manager.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

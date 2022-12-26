@@ -10,7 +10,12 @@ from constants.tasks_constants import\
 
 
 class StatusesTestCase(TestCase):
-    fixtures = ['users.json', 'statuses.json', 'tasks.json']
+    fixtures = ['users.json',
+                'statuses.json',
+                'tasks.json',
+                'labels.json',
+                'tasklabelrelation.json'
+                ]
 
     def setUp(self):
         self.user1 = Users.objects.get(pk=1)
@@ -32,7 +37,7 @@ class StatusesTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(task1.name, 'Destroy wall Maria')
         self.assertEqual(task2.name, 'Destroy Wall Rosa')
-        self.assertEqual(task3.name, "Infiltrate Liberio's camp")
+        self.assertEqual(task3.name, "Infiltrate Liberios camp")
 
     def test_create_task(self):
         """Test create task"""
@@ -138,7 +143,7 @@ class StatusesTestCase(TestCase):
         )
 
     def test_delete_task(self):
-        """Test task delete """
+        """Test task delete"""
         task = self.task1
         self.client.force_login(self.user2)
         response = self.client.get(reverse(
@@ -159,4 +164,48 @@ class StatusesTestCase(TestCase):
         self.assertContains(
             response,
             DELETE_TASK_SUCCESS_MESSAGE,
+        )
+
+    def test_filter_by_status(self):
+        """Filter the tasks by status"""
+        self.client.force_login(self.user1)
+        filtered_by_status = f'{reverse("tasks:tasks")}?status=1'
+        response = self.client.get(filtered_by_status)
+        self.assertEqual(response.status_code, 200)
+        self.assertQuerysetEqual(
+            list(response.context['tasks']),
+            [self.task1, self.task2, self.task3]
+        )
+
+    def test_filter_by_executor(self):
+        """Filter the tasks by executor"""
+        self.client.force_login(self.user1)
+        filtered_by_executive = f'{reverse("tasks:tasks")}?executor=2'
+        response = self.client.get(filtered_by_executive)
+        self.assertEqual(response.status_code, 200)
+        self.assertQuerysetEqual(
+            list(response.context['tasks']),
+            [self.task1, self.task3]
+        )
+
+    def test_filter_by_own_tasks(self):
+        """Filter by own tasks"""
+        self.client.force_login(self.user1)
+        filtered_by_own_tasks = f'{reverse("tasks:tasks")}?own_task=on'
+        response = self.client.get(filtered_by_own_tasks)
+        self.assertEqual(response.status_code, 200)
+        self.assertQuerysetEqual(
+            list(response.context['tasks']),
+            [self.task3],
+        )
+
+    def test_filter_by_label(self):
+        """Filter the tasks by label"""
+        self.client.force_login(self.user1)
+        filtered_by_label = f'{reverse("tasks:tasks")}?labels=1'
+        response = self.client.get(filtered_by_label)
+        self.assertEqual(response.status_code, 200)
+        self.assertQuerysetEqual(
+            list(response.context['tasks']),
+            [self.task1]
         )

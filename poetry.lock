@@ -87,6 +87,21 @@ beautifulsoup4 = ">=4.8.0"
 Django = ">=3.2"
 
 [[package]]
+name = "django-filter"
+version = "22.1"
+description = "Django-filter is a reusable Django application for allowing users to filter querysets dynamically."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "django-filter-22.1.tar.gz", hash = "sha256:ed473b76e84f7e83b2511bb2050c3efb36d135207d0128dfe3ae4b36e3594ba5"},
+    {file = "django_filter-22.1-py3-none-any.whl", hash = "sha256:ed429e34760127e3520a67f415bec4c905d4649fbe45d0d6da37e6ff5e0287eb"},
+]
+
+[package.dependencies]
+Django = ">=3.2"
+
+[[package]]
 name = "flake8"
 version = "6.0.0"
 description = "the modular source code checker: pep8 pyflakes and co"
@@ -269,4 +284,4 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "80d2e93ab32933854fb066b4a7bd7bd0131dc2b42fd630436918736447761f90"
+content-hash = "5b321b6eda6498fe5551693370771b8356f60e98877fea971a1f7caa9cb52119"

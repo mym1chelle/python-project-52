@@ -2,29 +2,34 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.shortcuts import redirect
+from django_filters.views import FilterView
 from django.views.generic import CreateView,\
-    ListView, UpdateView, DeleteView, DetailView
+    UpdateView, DeleteView, DetailView
 from django.urls import reverse_lazy
 from task_manager.tasks.models import Tasks
 from task_manager.users.models import Users
 from task_manager.tasks.forms import CreateTaskForm
+from task_manager.tasks.filters import FilterForTasks
 from constants.tasks_constants import\
     TASKS_LIST_TITLE, CREATE_TASK_SUCCESS_MESSAGE,\
     CREATE_TASK_TITLE, CREATE_TASK_BUTTON,\
     TASK_VIEW_TITLE, CHANGE_TASK_TITLE,\
     CHANGE_TASK_BUTTON, CHANGE_TASK_SUCCESS_MESSAGE,\
     DELETE_TASK_TITLE, DELETE_TASK_BUTTON,\
-    DELETE_TASK_ERROR_MESSAGE, DELETE_TASK_SUCCESS_MESSAGE
+    DELETE_TASK_ERROR_MESSAGE, DELETE_TASK_SUCCESS_MESSAGE,\
+    SHOW_TASK_BUTTON
 
 
-class AllTasksView(LoginRequiredMixin, ListView):
+class AllTasksView(LoginRequiredMixin, FilterView):
     model = Tasks
     template_name = 'tasks/tasks.html'
     context_object_name = 'tasks'
+    filterset_class = FilterForTasks
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data()
+        context = super().get_context_data(**kwargs)
         context['title'] = TASKS_LIST_TITLE
+        context['text_button'] = SHOW_TASK_BUTTON
         return context
 
 

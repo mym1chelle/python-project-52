@@ -25,3 +25,9 @@ CREATE_LABEL_SUCCESS_MESSAGE = gettext_lazy('Label successfully created')
 CHANGE_LABEL_SUCCESS_MESSAGE = gettext_lazy('Label successfully changed')
 DELETE_LABEL_SUCCESS_MESSAGE = gettext_lazy('Label successfully deleted')
 DELETE_LABEL_ERROR_MESSAGE = gettext_lazy('Cannot delete a label in use')
+
+# filter
+FILTER_EXECUTOR = gettext_lazy('Executor')
+FILTER_LABEL = gettext_lazy('Label')
+FILTER_OWN_TASKS = gettext_lazy('My tasks only')
+FILTER_STATUS = gettext_lazy('Status')

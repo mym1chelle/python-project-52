@@ -29,8 +29,8 @@
     "model": "tasks.tasks",
     "pk": 3,
     "fields": {
-        "name": "Infiltrate Liberio's camp",
-        "description": "Infiltrate Liberio's camp and strike down the hammer titan",
+        "name": "Infiltrate Liberios camp",
+        "description": "Infiltrate Liberios camp and strike down the hammer titan",
         "status": 1,
         "created_by": 1,
         "executor": 2,
