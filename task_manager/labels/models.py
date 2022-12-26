@@ -1,7 +1,7 @@
 from django.db import models
 from constants.labels_constants import\
     LABEL_NAME_VN, LABEL_CREATED_AT_VN,\
-    LABEL_UPDATED_AT_VN,LABELS_MODEL_VERBOSE_NAME,\
+    LABEL_UPDATED_AT_VN, LABELS_MODEL_VERBOSE_NAME,\
     LABELS_MODEL_VERBOSE_NAME_PLURAL
 
 

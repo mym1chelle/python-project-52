@@ -27,8 +27,8 @@ class StatusesTestCase(TestCase):
             response,
             template_name='tasks/tasks.html',
         )
-        statuses_list = list(response.context['tasks'])
-        task1, task2, task3 = statuses_list
+        tasks_list = list(response.context['tasks'])
+        task1, task2, task3 = tasks_list
         self.assertEqual(response.status_code, 200)
         self.assertEqual(task1.name, 'Destroy wall Maria')
         self.assertEqual(task2.name, 'Destroy Wall Rosa')
