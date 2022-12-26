@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-26 14:12+0400\n"
+"POT-Creation-Date: 2022-12-26 16:54+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,85 @@ msgstr ""
 "(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
 "n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
+#: constants/labels_constants.py:5
+msgid "Label"
+msgstr "Etykietka"
+
+#: constants/labels_constants.py:6 constants/labels_constants.py:13
+#: constants/tasks_constants.py:11 task_manager/templates/base.html:30
+#: task_manager/templates/tasks/show_task.html:33
+msgid "Labels"
+msgstr "Etykietki"
+
+#: constants/labels_constants.py:7 constants/statuses_constants.py:7
+#: constants/tasks_constants.py:7 task_manager/templates/labels/labels.html:12
+#: task_manager/templates/statuses/statuses.html:12
+#: task_manager/templates/tasks/tasks.html:12
+msgid "Name"
+msgstr "Imię"
+
+#: constants/labels_constants.py:8 constants/statuses_constants.py:8
+#: constants/tasks_constants.py:13 task_manager/templates/labels/labels.html:13
+#: task_manager/templates/statuses/statuses.html:13
+#: task_manager/templates/tasks/show_task.html:28
+#: task_manager/templates/tasks/tasks.html:16
+#: task_manager/templates/users/users.html:13
+msgid "Created at"
+msgstr "Utworzono"
+
+#: constants/labels_constants.py:9 constants/statuses_constants.py:9
+#: constants/tasks_constants.py:14
+msgid "Updated at"
+msgstr "Zaktualizowano"
+
+#: constants/labels_constants.py:14 task_manager/templates/labels/labels.html:7
+msgid "Create a label"
+msgstr "Utwórz etykietkę"
+
+#: constants/labels_constants.py:15
+msgid "Change a label"
+msgstr "Zmień etykietkę"
+
+#: constants/labels_constants.py:16
+msgid "Delete a label"
+msgstr "Usuń etykietkę"
+
+#: constants/labels_constants.py:19 constants/statuses_constants.py:18
+#: constants/tasks_constants.py:25
+msgid "Create"
+msgstr "Utworzyć"
+
+#: constants/labels_constants.py:20 constants/statuses_constants.py:19
+#: constants/tasks_constants.py:26 constants/users_constants.py:7
+#: task_manager/templates/labels/labels.html:25
+#: task_manager/templates/statuses/statuses.html:25
+#: task_manager/templates/tasks/show_task.html:43
+#: task_manager/templates/tasks/tasks.html:33
+#: task_manager/templates/users/users.html:26
+msgid "Change"
+msgstr "Zmienić"
+
+#: constants/labels_constants.py:21 constants/statuses_constants.py:20
+#: constants/tasks_constants.py:27 constants/users_constants.py:8
+msgid "Yes, delete"
+msgstr "Tak, usuń"
+
+#: constants/labels_constants.py:24
+msgid "Label successfully created"
+msgstr "Etykietka zostałz pomyślnie utworzona"
+
+#: constants/labels_constants.py:25
+msgid "Label successfully changed"
+msgstr "Etykietka została pomyślnie zmieniona"
+
+#: constants/labels_constants.py:26
+msgid "Label successfully deleted"
+msgstr "Etykietka zostało pomyślnie usunięta"
+
+#: constants/labels_constants.py:27
+msgid "Cannot delete a label in use"
+msgstr "Nie można usunąć etykietkę w użyciu"
+
 #: constants/statuses_constants.py:5 constants/tasks_constants.py:9
 #: task_manager/templates/tasks/show_task.html:24
 #: task_manager/templates/tasks/tasks.html:13
@@ -30,24 +109,6 @@ msgstr "Status"
 #: task_manager/templates/base.html:27
 msgid "Statuses"
 msgstr "Statusy"
-
-#: constants/statuses_constants.py:7 constants/tasks_constants.py:7
-#: task_manager/templates/statuses/statuses.html:12
-#: task_manager/templates/tasks/tasks.html:12
-msgid "Name"
-msgstr "Imię"
-
-#: constants/statuses_constants.py:8 constants/tasks_constants.py:13
-#: task_manager/templates/statuses/statuses.html:13
-#: task_manager/templates/tasks/show_task.html:28
-#: task_manager/templates/tasks/tasks.html:16
-#: task_manager/templates/users/users.html:13
-msgid "Created at"
-msgstr "Utworzono"
-
-#: constants/statuses_constants.py:9 constants/tasks_constants.py:14
-msgid "Updated at"
-msgstr "Zaktualizowano"
 
 #: constants/statuses_constants.py:13
 #: task_manager/templates/statuses/statuses.html:7
@@ -61,24 +122,6 @@ msgstr "Zmień status"
 #: constants/statuses_constants.py:15
 msgid "Delete a status"
 msgstr "Usuń status"
-
-#: constants/statuses_constants.py:18 constants/tasks_constants.py:25
-msgid "Create"
-msgstr "Utworzyć"
-
-#: constants/statuses_constants.py:19 constants/tasks_constants.py:26
-#: constants/users_constants.py:7
-#: task_manager/templates/statuses/statuses.html:25
-#: task_manager/templates/tasks/show_task.html:33
-#: task_manager/templates/tasks/tasks.html:33
-#: task_manager/templates/users/users.html:26
-msgid "Change"
-msgstr "Zmienić"
-
-#: constants/statuses_constants.py:20 constants/tasks_constants.py:27
-#: constants/users_constants.py:8
-msgid "Yes, delete"
-msgstr "Tak, usuń"
 
 #: constants/statuses_constants.py:23
 msgid "Status successfully created"
@@ -101,7 +144,7 @@ msgid "Task"
 msgstr "Zadanie"
 
 #: constants/tasks_constants.py:6 constants/tasks_constants.py:18
-#: task_manager/templates/base.html:30
+#: task_manager/templates/base.html:33
 msgid "Tasks"
 msgstr "Zadania"
 
@@ -112,10 +155,6 @@ msgstr "Opis"
 #: constants/tasks_constants.py:10
 msgid "Executive"
 msgstr "Wykonawca"
-
-#: constants/tasks_constants.py:11
-msgid "Labels"
-msgstr ""
 
 #: constants/tasks_constants.py:12
 #: task_manager/templates/tasks/show_task.html:16
@@ -129,11 +168,15 @@ msgstr "Widok zadań"
 
 #: constants/tasks_constants.py:20 task_manager/templates/tasks/tasks.html:7
 msgid "Create a task"
-msgstr "Create a task"
+msgstr "Utwórz zadanie"
 
-#: constants/tasks_constants.py:21 constants/tasks_constants.py:22
+#: constants/tasks_constants.py:21
 msgid "Change a task"
 msgstr "Zmień zadanie"
+
+#: constants/tasks_constants.py:22
+msgid "Delete a task"
+msgstr "Usuń zadanie"
 
 #: constants/tasks_constants.py:28
 msgid "Show"
@@ -223,21 +266,29 @@ msgstr "Użytkownik"
 msgid "Task manager"
 msgstr "Menadżer zadań"
 
-#: task_manager/templates/base.html:37
+#: task_manager/templates/base.html:40
 msgid "Log out"
 msgstr "Wyloguj"
 
-#: task_manager/templates/base.html:41
+#: task_manager/templates/base.html:44
 msgid "Log in"
 msgstr "Zaloguj się"
 
-#: task_manager/templates/base.html:44
+#: task_manager/templates/base.html:47
 msgid "Sign up"
 msgstr "Zapisz się"
 
 #: task_manager/templates/delete.html:11
 msgid "Are you sure you want to delete"
 msgstr "Czy jesteś pewien, że chcesz usunąć"
+
+#: task_manager/templates/labels/labels.html:27
+#: task_manager/templates/statuses/statuses.html:27
+#: task_manager/templates/tasks/show_task.html:45
+#: task_manager/templates/tasks/tasks.html:35
+#: task_manager/templates/users/users.html:28
+msgid "Delete"
+msgstr "Usunąć"
 
 #: task_manager/templates/startpage.html:24
 msgid "Hello from Hexlet!"
@@ -250,13 +301,6 @@ msgstr "Praktyczne kursy programowania"
 #: task_manager/templates/startpage.html:27
 msgid "Learn more"
 msgstr "Dowiedzieć się więcej"
-
-#: task_manager/templates/statuses/statuses.html:27
-#: task_manager/templates/tasks/show_task.html:35
-#: task_manager/templates/tasks/tasks.html:35
-#: task_manager/templates/users/users.html:28
-msgid "Delete"
-msgstr "Usunąć"
 
 #: task_manager/templates/tasks/show_task.html:20
 #: task_manager/templates/tasks/tasks.html:15
