@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-25 10:39+0400\n"
+"POT-Creation-Date: 2022-12-26 14:12+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,9 @@ msgstr ""
 "(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
 "n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: constants/statuses_constants.py:5
+#: constants/statuses_constants.py:5 constants/tasks_constants.py:9
+#: task_manager/templates/tasks/show_task.html:24
+#: task_manager/templates/tasks/tasks.html:13
 msgid "Status"
 msgstr "Status"
 
@@ -29,18 +31,21 @@ msgstr "Status"
 msgid "Statuses"
 msgstr "Statusy"
 
-#: constants/statuses_constants.py:7
+#: constants/statuses_constants.py:7 constants/tasks_constants.py:7
 #: task_manager/templates/statuses/statuses.html:12
+#: task_manager/templates/tasks/tasks.html:12
 msgid "Name"
 msgstr "Imię"
 
-#: constants/statuses_constants.py:8
+#: constants/statuses_constants.py:8 constants/tasks_constants.py:13
 #: task_manager/templates/statuses/statuses.html:13
+#: task_manager/templates/tasks/show_task.html:28
+#: task_manager/templates/tasks/tasks.html:16
 #: task_manager/templates/users/users.html:13
 msgid "Created at"
 msgstr "Utworzono"
 
-#: constants/statuses_constants.py:9
+#: constants/statuses_constants.py:9 constants/tasks_constants.py:14
 msgid "Updated at"
 msgstr "Zaktualizowano"
 
@@ -57,19 +62,21 @@ msgstr "Zmień status"
 msgid "Delete a status"
 msgstr "Usuń status"
 
-#: constants/statuses_constants.py:18
-#, fuzzy
-#| msgid "Created at"
+#: constants/statuses_constants.py:18 constants/tasks_constants.py:25
 msgid "Create"
-msgstr "Utworzono"
+msgstr "Utworzyć"
 
-#: constants/statuses_constants.py:19 constants/users_constants.py:7
+#: constants/statuses_constants.py:19 constants/tasks_constants.py:26
+#: constants/users_constants.py:7
 #: task_manager/templates/statuses/statuses.html:25
+#: task_manager/templates/tasks/show_task.html:33
+#: task_manager/templates/tasks/tasks.html:33
 #: task_manager/templates/users/users.html:26
 msgid "Change"
 msgstr "Zmienić"
 
-#: constants/statuses_constants.py:20 constants/users_constants.py:8
+#: constants/statuses_constants.py:20 constants/tasks_constants.py:27
+#: constants/users_constants.py:8
 msgid "Yes, delete"
 msgstr "Tak, usuń"
 
@@ -88,6 +95,65 @@ msgstr "Status został pomyślnie usunięty"
 #: constants/statuses_constants.py:26
 msgid "Cannot delete a status in use"
 msgstr "Nie można usunąć statusu w użyciu"
+
+#: constants/tasks_constants.py:5
+msgid "Task"
+msgstr "Zadanie"
+
+#: constants/tasks_constants.py:6 constants/tasks_constants.py:18
+#: task_manager/templates/base.html:30
+msgid "Tasks"
+msgstr "Zadania"
+
+#: constants/tasks_constants.py:8
+msgid "Description"
+msgstr "Opis"
+
+#: constants/tasks_constants.py:10
+msgid "Executive"
+msgstr "Wykonawca"
+
+#: constants/tasks_constants.py:11
+msgid "Labels"
+msgstr ""
+
+#: constants/tasks_constants.py:12
+#: task_manager/templates/tasks/show_task.html:16
+#: task_manager/templates/tasks/tasks.html:14
+msgid "Created by"
+msgstr "Stworzone przez"
+
+#: constants/tasks_constants.py:19
+msgid "Task view"
+msgstr "Widok zadań"
+
+#: constants/tasks_constants.py:20 task_manager/templates/tasks/tasks.html:7
+msgid "Create a task"
+msgstr "Create a task"
+
+#: constants/tasks_constants.py:21 constants/tasks_constants.py:22
+msgid "Change a task"
+msgstr "Zmień zadanie"
+
+#: constants/tasks_constants.py:28
+msgid "Show"
+msgstr "Pokaż"
+
+#: constants/tasks_constants.py:31
+msgid "Task successfully created"
+msgstr "Zadanie zostało pomyślnie utworzone"
+
+#: constants/tasks_constants.py:32
+msgid "Task successfully changed"
+msgstr "Zadanie zostało pomyślnie zmienione"
+
+#: constants/tasks_constants.py:33
+msgid "Task successfully deleted"
+msgstr "Zadanie zostało pomyślnie usunięte"
+
+#: constants/tasks_constants.py:34
+msgid "The task can only be deleted by its creator"
+msgstr "Zadanie może usunąć tylko jego twórca"
 
 #: constants/users_constants.py:5
 msgid "Login"
@@ -122,8 +188,6 @@ msgid "User successfully changed"
 msgstr "Użytkownik został pomyślnie zmieniony"
 
 #: constants/users_constants.py:18
-#, fuzzy
-#| msgid "User was successfuly delete"
 msgid "User was successfully delete"
 msgstr "Użytkownik został pomyślnie usunięty"
 
@@ -155,20 +219,19 @@ msgstr "Użytkownicy"
 msgid "User"
 msgstr "Użytkownik"
 
-#: task_manager/templates/base.html:12
-#: task_manager/templates/base.html:16
+#: task_manager/templates/base.html:12 task_manager/templates/base.html:16
 msgid "Task manager"
 msgstr "Menadżer zadań"
 
-#: task_manager/templates/base.html:34
+#: task_manager/templates/base.html:37
 msgid "Log out"
 msgstr "Wyloguj"
 
-#: task_manager/templates/base.html:38
+#: task_manager/templates/base.html:41
 msgid "Log in"
 msgstr "Zaloguj się"
 
-#: task_manager/templates/base.html:41
+#: task_manager/templates/base.html:44
 msgid "Sign up"
 msgstr "Zapisz się"
 
@@ -189,9 +252,16 @@ msgid "Learn more"
 msgstr "Dowiedzieć się więcej"
 
 #: task_manager/templates/statuses/statuses.html:27
+#: task_manager/templates/tasks/show_task.html:35
+#: task_manager/templates/tasks/tasks.html:35
 #: task_manager/templates/users/users.html:28
 msgid "Delete"
 msgstr "Usunąć"
+
+#: task_manager/templates/tasks/show_task.html:20
+#: task_manager/templates/tasks/tasks.html:15
+msgid "Executor"
+msgstr "Wykonawca"
 
 #: task_manager/templates/users/users.html:11
 msgid "User name"

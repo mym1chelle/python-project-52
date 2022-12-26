@@ -9,7 +9,7 @@ TASK_DESCRIPTION_VN = gettext_lazy('Description')
 TASK_STATUS_VN = gettext_lazy('Status')
 TASK_EXECUTOR_VN = gettext_lazy('Executive')
 TASK_LABEL_VN = gettext_lazy('Labels')
-TASK_CREATED_BY_VN = gettext_lazy('Created_by')
+TASK_CREATED_BY_VN = gettext_lazy('Created by')
 TASK_CREATED_AT_VN = gettext_lazy('Created at')
 TASK_UPDATED_AT_VN = gettext_lazy('Updated at')
 
