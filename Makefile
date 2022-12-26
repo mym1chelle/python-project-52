@@ -15,3 +15,6 @@ lint:
 
 test:
 	poetry run python manage.py test
+
+test-coverage:
+	poetry run coverage run --source='.' manage.py test
