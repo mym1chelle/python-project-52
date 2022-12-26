@@ -86,7 +86,6 @@ class StatusesTestCase(TestCase):
         new_status = Statuses.objects.get(id=status.id)
         self.assertEqual('Done', new_status.name)
 
-
     def test_delete_status(self):
         """Test delete status"""
         status = self.status2
@@ -114,7 +113,6 @@ class StatusesTestCase(TestCase):
             response,
             DELETE_STATUS_SUCCESS_MESSAGE
         )
-
 
     def test_delete_use_status(self):
         """Test delete use status"""
