@@ -7,9 +7,9 @@ on:
 jobs:
   build:
     env:
-      SECRET_KEY: ${{ secret.SECRET_KEY }}
-      ROLLBAR_TOKEN: ${{ secret.ACCESS_TOKEN }}
-      DATABASE_URL: ${{ secret.DATABASE_URL }}
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      ROLLBAR_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -31,7 +31,7 @@ jobs:
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
         env:
-          CC_TEST_REPORTER_ID: ${{ secret.CC_TEST_REPORTER_ID }}
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: make test-coverage
           debug: true
