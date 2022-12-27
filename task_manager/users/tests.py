@@ -59,7 +59,7 @@ class UserTestCase(TestCase):
             follow=True,  # will reach the last redirect
         )
 
-        self.assertRedirects(response, '/ru/login/', status_code=302)
+        self.assertRedirects(response, '/login/', status_code=302)
 
         self.assertContains(
             response,
@@ -99,7 +99,7 @@ class UserTestCase(TestCase):
             follow=True,
         )
 
-        self.assertRedirects(response, '/ru/users/', status_code=302)
+        self.assertRedirects(response, '/users/', status_code=302)
         self.assertContains(
             response,
             CHANGE_USER_SUCCESS_MESSAGE
@@ -120,7 +120,7 @@ class UserTestCase(TestCase):
             reverse('change', args=(user2.id,)),
             follow=True
         )
-        self.assertRedirects(response, '/ru/users/', status_code=302)
+        self.assertRedirects(response, '/users/', status_code=302)
         self.assertContains(
             response,
             CHANGE_USER_ERROR_MESSAGE,
@@ -135,7 +135,7 @@ class UserTestCase(TestCase):
             reverse('delete', args=(user2.id,)),
             follow=True
         )
-        self.assertRedirects(response, '/ru/users/', status_code=302)
+        self.assertRedirects(response, '/users/', status_code=302)
         self.assertContains(
             response,
             CHANGE_USER_ERROR_MESSAGE,
@@ -157,7 +157,7 @@ class UserTestCase(TestCase):
             'delete', args=(user.id,)),
             follow=True
         )
-        self.assertRedirects(response, '/ru/users/', status_code=302)
+        self.assertRedirects(response, '/users/', status_code=302)
         self.assertContains(
             response,
             DELETE_USER_ERROR_MESSAGE,
@@ -179,7 +179,7 @@ class UserTestCase(TestCase):
             'delete', args=(user.id,)),
             follow=True
         )
-        self.assertRedirects(response, '/ru/users/', status_code=302)
+        self.assertRedirects(response, '/users/', status_code=302)
         self.assertContains(
             response,
             DELETE_USER_SUCCESS_MESSAGE,

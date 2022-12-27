@@ -63,7 +63,7 @@ class StatusesTestCase(TestCase):
             follow=True,
         )
 
-        self.assertRedirects(response, '/ru/tasks/', status_code=302)
+        self.assertRedirects(response, '/tasks/', status_code=302)
 
         self.assertContains(
             response,
@@ -105,7 +105,7 @@ class StatusesTestCase(TestCase):
             follow=True,
         )
 
-        self.assertRedirects(response, '/ru/tasks/', status_code=302)
+        self.assertRedirects(response, '/tasks/', status_code=302)
         self.assertContains(
             response,
             CHANGE_TASK_SUCCESS_MESSAGE
@@ -136,7 +136,7 @@ class StatusesTestCase(TestCase):
         )
 
         self.assertTrue(Tasks.objects.get(pk=task.id))
-        self.assertRedirects(response, '/ru/tasks/', status_code=302)
+        self.assertRedirects(response, '/tasks/', status_code=302)
         self.assertContains(
             response,
             DELETE_TASK_ERROR_MESSAGE,
@@ -160,7 +160,7 @@ class StatusesTestCase(TestCase):
         )
         with self.assertRaises(Tasks.DoesNotExist):
             Tasks.objects.get(pk=task.id)
-        self.assertRedirects(response, '/ru/tasks/', status_code=302)
+        self.assertRedirects(response, '/tasks/', status_code=302)
         self.assertContains(
             response,
             DELETE_TASK_SUCCESS_MESSAGE,

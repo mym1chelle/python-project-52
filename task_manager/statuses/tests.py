@@ -48,7 +48,7 @@ class StatusesTestCase(TestCase):
             follow=True,
         )
 
-        self.assertRedirects(response, '/ru/statuses/', status_code=302)
+        self.assertRedirects(response, '/statuses/', status_code=302)
 
         self.assertContains(
             response,
@@ -78,7 +78,7 @@ class StatusesTestCase(TestCase):
             follow=True,
         )
 
-        self.assertRedirects(response, '/ru/statuses/', status_code=302)
+        self.assertRedirects(response, '/statuses/', status_code=302)
         self.assertContains(
             response,
             CHANGE_STATUS_SUCCESS_MESSAGE
@@ -108,7 +108,7 @@ class StatusesTestCase(TestCase):
         )
         with self.assertRaises(Statuses.DoesNotExist):
             Statuses.objects.get(pk=status.id)
-        self.assertRedirects(response, '/ru/statuses/', status_code=302)
+        self.assertRedirects(response, '/statuses/', status_code=302)
         self.assertContains(
             response,
             DELETE_STATUS_SUCCESS_MESSAGE
@@ -135,7 +135,7 @@ class StatusesTestCase(TestCase):
             follow=True
         )
         self.assertTrue(Statuses.objects.get(pk=status.id))
-        self.assertRedirects(response, '/ru/statuses/', status_code=302)
+        self.assertRedirects(response, '/statuses/', status_code=302)
         self.assertContains(
             response,
             DELETE_STATUS_ERROR_MESSAGE

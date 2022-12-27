@@ -68,7 +68,7 @@ class StatusesTestCase(TestCase):
             follow=True,
         )
 
-        self.assertRedirects(response, '/ru/labels/', status_code=302)
+        self.assertRedirects(response, '/labels/', status_code=302)
 
         self.assertContains(
             response,
@@ -98,7 +98,7 @@ class StatusesTestCase(TestCase):
             follow=True,
         )
 
-        self.assertRedirects(response, '/ru/labels/', status_code=302)
+        self.assertRedirects(response, '/labels/', status_code=302)
         self.assertContains(
             response,
             CHANGE_LABEL_SUCCESS_MESSAGE
@@ -124,7 +124,7 @@ class StatusesTestCase(TestCase):
         )
         with self.assertRaises(Labels.DoesNotExist):
             Labels.objects.get(pk=label.id)
-        self.assertRedirects(response, '/ru/labels/', status_code=302)
+        self.assertRedirects(response, '/labels/', status_code=302)
         self.assertContains(
             response,
             DELETE_LABEL_SUCCESS_MESSAGE,
@@ -147,7 +147,7 @@ class StatusesTestCase(TestCase):
             follow=True
         )
         self.assertTrue(Labels.objects.get(id=label.id))
-        self.assertRedirects(response, '/ru/labels/', status_code=302)
+        self.assertRedirects(response, '/labels/', status_code=302)
         self.assertContains(
             response,
             DELETE_LABEL_ERROR_MESSAGE
