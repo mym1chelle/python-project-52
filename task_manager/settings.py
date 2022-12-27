@@ -34,7 +34,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = ast.literal_eval(os.getenv('DEBUG_VALUE'))
+# DEBUG = ast.literal_eval(os.getenv('DEBUG_VALUE'))
+DEBUG = True
 
 CSRF_TRUSTED_ORIGINS = ['https://python-project-52-mymichelle.up.railway.app']
 
