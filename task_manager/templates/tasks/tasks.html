@@ -23,7 +23,7 @@
             <th>{% translate "Status" %}</th>
             <th>{% translate "Created by" %}</th>
             <th>{% translate "Executor" %}</th>
-            <th>{% translate "Created at" %}</th>
+            <th class="d-none d-sm-block">{% translate "Created at" %}</th>
             <th></th>
         </tr>
       </thead>
@@ -37,7 +37,7 @@
               <td>{{ task.status }}</td>
               <td>{{ task.created_by }}</td>
               <td>{{ task.executor }}</td>
-              <td>{{ task.created_at }}</td>
+              <td class="d-none d-sm-block">{{ task.created_at }}</td>
 
             <td>
               <a href="{% url 'tasks:update' pk=task.id %}">{% translate "Change" %}</a>

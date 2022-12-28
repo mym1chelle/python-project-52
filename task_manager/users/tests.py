@@ -63,8 +63,7 @@ class UserTestCase(TestCase):
 
         self.assertContains(
             response,
-            CREATE_USER_SUCCESS_MESSAGE,
-            status_code=200,
+            CREATE_USER_SUCCESS_MESSAGE
         )
         new_user = Users.objects.get(username=new_user['username'])
         self.assertEqual('Reiner', new_user.first_name)
